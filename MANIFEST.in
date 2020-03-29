@@ -1,0 +1,3 @@
+graft photoseleven/static
+graft photoseleven/templates
+global-exclude *.pyc

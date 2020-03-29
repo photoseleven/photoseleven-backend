@@ -1,0 +1,9 @@
+# IDE
+.idea
+
+# DEV
+instance
+venv
+
+#Pyhon
+*.pyc
