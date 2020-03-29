@@ -1,0 +1,9 @@
+coverage
+Flask
+Flask-PyMongo
+Pillow
+pyjwt
+pytest
+python-dotenv
+setuptools
+werkzeug
