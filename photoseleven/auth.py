@@ -84,7 +84,7 @@ def users_manipulation(data):
         return responce_success(200)
 
 
-@bp.route('/login', methods=['GET'])
+@bp.route('/login', methods=['POST'])
 @only_json_content
 def login(data):
     """To login the user and get back a token"""
