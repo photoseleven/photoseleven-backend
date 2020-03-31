@@ -106,10 +106,10 @@ def test_users_wrong_method(client, app):
                           ('test', 'test2', 401, AuthErrors.ERR_AUTH_WRONG_PASSWORD)))
 def test_login(client, app, username, password, status_code, error_message):
     with app.app_context():
-        response = client.get(url_for('auth.login'),
-                              data=json.dumps({'username': username,
-                                               'password': password}),
-                              content_type='application/json')
+        response = client.post(url_for('auth.login'),
+                               data=json.dumps({'username': username,
+                                                'password': password}),
+                               content_type='application/json')
 
         assert response.status_code == status_code
 
@@ -126,10 +126,10 @@ def test_login(client, app, username, password, status_code, error_message):
 
 def test_login_required(client, app):
     with app.app_context():
-        response = client.get(url_for('auth.login'),
-                              data=json.dumps({'username': 'test',
-                                               'password': 'test'}),
-                              content_type='application/json')
+        response = client.post(url_for('auth.login'),
+                               data=json.dumps({'username': 'test',
+                                                'password': 'test'}),
+                               content_type='application/json')
 
         assert response.status_code == 200
         resp_json = response.get_json()
